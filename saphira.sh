@@ -2,7 +2,7 @@
 
 termux-wake-lock
 
-sh update_saphira.sh
+sh ~amrita/update_saphira.sh;
 
 clear;
 
