@@ -2,15 +2,15 @@
 
 termux-wake-lock
 
-sh update_saphira.sh
-
 echo -e " \n Now, Torshammer and Termux will be set up - YoursTruly, Eragon_Shadeslayer \n\n";
 
 read -p "Confirm for script execution. Press any key...\n\n" ;
 
-pkg upgrade; pkg install python python2 git tor torsocks ncurses-utils curl wget termux-api; yes| termux-setup-storage; cd; yes| rm -r torshammer; cd; git clone https://github.com/dotfighter/torshammer.git; cd; 
+pkg upgrade; pkg install python python2 git tor torsocks ncurses-utils curl wget termux-api; yes| termux-setup-storage; cd; yes| rm -r torshammer; yes| rm -r amrita; cd; 
 
-cd; curl https://download2262.mediafire.com/lknp9wb90y8g/jyuwtgbuxhri325/saphira.sh -o saphira.sh; chmod +x saphira.sh;
+cd; git clone https://github.com/yourstrulyeragon/amrita.git; cd amrita; chmod +x saphira.sh; chmod +x saphira_setup.sh; chmod +x saphira_update.sh;
+
+git clone https://github.com/dotfighter/torshammer.git; cd; 
 
 clear;
 
@@ -42,7 +42,7 @@ read -p " We shall wait till you have read it. Then press any key... ";
 
 tput bold; echo -e " \n Now, we will run saphira.sh for the first time \n"; tput sgr0;
 
-sh saphira.sh;
+sh ~/amrita/saphira.sh;
 
 termux-wake-unlock
 
